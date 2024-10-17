@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            background-image: url("/static/bg.webp"); /* Background image */
+            background-size: cover; /* Cover the entire screen */
+            background-attachment: fixed; /* Fixed background on scroll */
+            background-position: center; /* Center the background */
+            color: #e6e6e6; /* Light gray text for contrast */
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            filter: brightness(0.8); /* Darken the background for better text contrast */
+        }
+        a {
+            color: #00ff00; /* Green links */
+            text-decoration: none; /* No underline */
+            transition: color 0.3s; /* Smooth transition */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+            color: #00cc00; /* Slightly darker green */
+        }
+        h1 {
+            font-size: 2.5em; /* Larger heading */
+            margin-bottom: 0.5em; /* Space below */
+            text-shadow: 1px 1px 2px black; /* Shadow for text */
+        }
+        h2 {
+            border-bottom: 1px solid #333; /* Underline for h2 */
+            padding-bottom: 10px; /* Space below */
+            margin-top: 1em; /* Space above */
+            font-size: 2em; /* Slightly larger */
+            text-shadow: 1px 1px 2px black; /* Shadow for h2 */
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Padding */
+            display: inline-block; /* Centering */
+            max-width: 800px; /* Max width */
+        }
+        p {
+            font-size: 1.2em; /* Larger text */
+            margin: 0.5em 0; /* Space between paragraphs */
+            text-shadow: 1px 1px 2px black; /* Shadow for paragraphs */
+        }
+        ul {
+            list-style-type: none; /* No bullets */
+            padding: 0; /* No padding */
+            display: flex; /* Flexbox for skills */
+            flex-wrap: wrap; /* Wrap to next line if needed */
+            justify-content: center; /* Center items */
+        }
+        li {
+            margin: 10px; /* Space between items */
+            text-align: center; /* Center text under images */
+        }
+        img {
+            width: 60px; /* Size for skill images */
+            height: 60px; /* Size for skill images */
+            border: 1px solid #00ff00; /* Green border */
+            border-radius: 5px; /* Rounded corners */
+            transition: transform 0.3s; /* Smooth scaling effect */
+        }
+        img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+        .profile-pic {
+            width: 150px; /* Size for profile picture */
+            border-radius: 50%; /* Circular profile picture */
+            border: 2px solid #00ff00; /* Green border */
+            margin-bottom: 20px; /* Space below */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ profile.name }}</h1>
+        <img src="{{ url_for('static', filename='me.jpg') }}" alt="Profile Picture" class="profile-pic">
+        <p>Email: {{ profile.email }}</p>
+        <p>Phone Number: {{ profile.phonenumber }}</p>
+        <p>GitHub: <a href="https://github.com/{{ profile.github }}">{{ profile.github }}</a></p>
+        <p>Bio: {{ profile.bio }}</p>
+        <h2>Skills</h2>
+        <ul>
+            {% for skill, image in profile.skills %}
+                <li>
+                    <img src="{{ image }}" alt="{{ skill }}">
+                    <span>{{ skill }}</span> <!-- Properly placed skill text below the image -->
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -8,7 +8,7 @@ def home():
         'name': 'Kenneth T Gulmatico',
         'email': 'kenneth.gulmatico@hcdc.edu.ph',
         'phonenumber': '+63 9054549950',  # Add your phone number here
-        'github': 'DaddyK5',
+        'github': 'Daddyk5',
         'bio': (
             'I am a passionate and versatile individual with a strong foundation '
             'in machine learning, Python programming, and modern software development. '

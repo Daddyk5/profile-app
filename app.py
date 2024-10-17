@@ -8,7 +8,7 @@ def home():
         'name': 'Kenneth T Gulmatico',
         'email': 'kenneth.gulmatico@hcdc.edu.ph',
         'phonenumber': '+63 9054549950',  # Add your phone number here
-        'Github':'DaddyK5',
+        'github': 'DaddyK5',
         'bio': (
             'I am a passionate and versatile individual with a strong foundation '
             'in machine learning, Python programming, and modern software development. '
@@ -23,7 +23,7 @@ def home():
             ('Python', 'skills/python.jpg'),
             ('React', 'skills/react.jpg'),
             ('Android Development', 'skills/android.jpg'),
-            ('C++', 'skills/c++.jpg'),
+            ('C++', 'skills/cplusplus.jpg'),
             ('JavaScript', 'skills/javascript.jpg'),
             ('Technical Support', 'skills/techsupport.jpg'),
             ('Multitasker', 'skills/multitasker.jpg')
